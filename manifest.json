@@ -1,0 +1,25 @@
+{
+  "name": "BUFF USD",
+  "version": "1.0",
+  "description": "Converts amounts in Chinese Yuan to USD on any webpage.",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "alarms",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "CNY to USD"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
